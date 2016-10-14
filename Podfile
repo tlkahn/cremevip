@@ -13,6 +13,6 @@ target 'cremevip' do
   pod 'YouTubePlayer'
   pod 'CBStoreHouseRefreshControl'
   pod 'MZFormSheetPresentationController'
-
+  pod 'Braintree'
 
 end

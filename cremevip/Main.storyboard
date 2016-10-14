@@ -63,20 +63,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k4-cK-9LK">
-                                <rect key="frame" x="189" y="219" width="223" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="223" id="hgX-2E-0os"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-yU-yFu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="134"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paypal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukL-ib-XS1">
+                                <rect key="frame" x="0.0" y="197.5" width="600" height="134"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Venmo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-H2-Tjg">
+                                <rect key="frame" x="0.0" y="331.5" width="600" height="134"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaT-x1-Aed">
+                                <rect key="frame" x="0.0" y="466" width="600" height="134"/>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4k4-cK-9LK" firstAttribute="centerX" secondItem="03z-Cu-M7L" secondAttribute="centerX" id="1so-RN-ZKu"/>
-                            <constraint firstItem="4k4-cK-9LK" firstAttribute="centerY" secondItem="03z-Cu-M7L" secondAttribute="centerY" id="w87-pT-kRs"/>
+                            <constraint firstItem="ZrH-yU-yFu" firstAttribute="top" secondItem="Qjc-3G-Vdm" secondAttribute="bottom" id="06E-u1-2La"/>
+                            <constraint firstItem="ZrH-yU-yFu" firstAttribute="height" secondItem="ukL-ib-XS1" secondAttribute="height" id="2VK-1i-Cpb"/>
+                            <constraint firstItem="ZrH-yU-yFu" firstAttribute="width" secondItem="03z-Cu-M7L" secondAttribute="width" id="2d4-Nk-LnT"/>
+                            <constraint firstItem="ukL-ib-XS1" firstAttribute="width" secondItem="03z-Cu-M7L" secondAttribute="width" id="Fsv-YV-7D3"/>
+                            <constraint firstItem="F4e-H2-Tjg" firstAttribute="centerX" secondItem="03z-Cu-M7L" secondAttribute="centerX" id="LX2-eJ-0tM"/>
+                            <constraint firstItem="F4e-H2-Tjg" firstAttribute="top" secondItem="ukL-ib-XS1" secondAttribute="bottom" id="MzQ-FK-xQQ"/>
+                            <constraint firstItem="F4e-H2-Tjg" firstAttribute="width" secondItem="03z-Cu-M7L" secondAttribute="width" id="NJZ-dN-h0C"/>
+                            <constraint firstItem="ukL-ib-XS1" firstAttribute="height" secondItem="F4e-H2-Tjg" secondAttribute="height" id="Oi3-rW-YHl"/>
+                            <constraint firstItem="ukL-ib-XS1" firstAttribute="top" secondItem="ZrH-yU-yFu" secondAttribute="bottom" id="czF-oA-qS9"/>
+                            <constraint firstItem="ZrH-yU-yFu" firstAttribute="centerX" secondItem="03z-Cu-M7L" secondAttribute="centerX" id="dlz-JH-rqm"/>
+                            <constraint firstItem="KaT-x1-Aed" firstAttribute="top" secondItem="F4e-H2-Tjg" secondAttribute="bottom" id="fWm-g2-faA"/>
+                            <constraint firstItem="KaT-x1-Aed" firstAttribute="width" secondItem="03z-Cu-M7L" secondAttribute="width" id="hYT-9X-kga"/>
+                            <constraint firstItem="F4e-H2-Tjg" firstAttribute="height" secondItem="KaT-x1-Aed" secondAttribute="height" id="hly-le-RTW"/>
+                            <constraint firstItem="KaT-x1-Aed" firstAttribute="centerX" secondItem="03z-Cu-M7L" secondAttribute="centerX" id="mfO-jE-m6A"/>
+                            <constraint firstItem="z3z-fT-IQB" firstAttribute="top" secondItem="KaT-x1-Aed" secondAttribute="bottom" id="o0Z-OZ-ebJ"/>
+                            <constraint firstItem="ukL-ib-XS1" firstAttribute="centerX" secondItem="03z-Cu-M7L" secondAttribute="centerX" id="qw3-CR-O5u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZSB-Qc-G4c"/>
