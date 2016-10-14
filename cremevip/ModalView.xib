@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tcX-jT-eoT" customClass="ModalView" customModule="cremevip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="320" restorationIdentifier="ModalView" translatesAutoresizingMaskIntoConstraints="NO" id="EDf-bK-x6Y">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="190" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-dK-HPG">
+                            <rect key="frame" x="18" y="49" width="244" height="174"/>
+                            <string key="text">
+This event is 21 and over. Any Ticket holder unable to present valid identification indicating that they are at least 21 years of age will not be admitted to this event, and will not be eligible for a refund. Support lineup subject to change. No refunds will be issued for lack of identification or invalid identification.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Un-qO-yhR">
+                            <rect key="frame" x="56" y="25" width="168" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-j1-lH5">
+                            <rect key="frame" x="0.0" y="240" width="280" height="60"/>
+                            <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <state key="normal" title="Book">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="handleBottomButton:" destination="tcX-jT-eoT" eventType="touchUpInside" id="V3a-5p-hWz"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="7Un-qO-yhR" firstAttribute="top" secondItem="EDf-bK-x6Y" secondAttribute="top" constant="25" id="2Hh-Pu-tU3"/>
+                        <constraint firstItem="gnB-dK-HPG" firstAttribute="centerX" secondItem="uCC-j1-lH5" secondAttribute="centerX" id="4PX-V4-Y2B"/>
+                        <constraint firstItem="uCC-j1-lH5" firstAttribute="width" secondItem="EDf-bK-x6Y" secondAttribute="width" id="5FW-hg-FeU"/>
+                        <constraint firstItem="gnB-dK-HPG" firstAttribute="top" secondItem="EDf-bK-x6Y" secondAttribute="top" constant="49" id="ApS-dy-vvk"/>
+                        <constraint firstItem="gnB-dK-HPG" firstAttribute="centerY" secondItem="EDf-bK-x6Y" secondAttribute="centerY" constant="-14" id="ONa-su-TEp"/>
+                        <constraint firstItem="uCC-j1-lH5" firstAttribute="top" secondItem="EDf-bK-x6Y" secondAttribute="top" constant="240" id="UbP-Pp-p9u"/>
+                        <constraint firstItem="gnB-dK-HPG" firstAttribute="leading" secondItem="EDf-bK-x6Y" secondAttribute="leading" constant="18" id="XMs-v7-ffy"/>
+                        <constraint firstItem="7Un-qO-yhR" firstAttribute="leading" secondItem="EDf-bK-x6Y" secondAttribute="leading" constant="56" id="hTe-MZ-cFF"/>
+                        <constraint firstItem="gnB-dK-HPG" firstAttribute="centerX" secondItem="EDf-bK-x6Y" secondAttribute="centerX" id="j7F-Tu-01g"/>
+                        <constraint firstAttribute="bottom" secondItem="uCC-j1-lH5" secondAttribute="bottom" id="jaH-bH-PZD"/>
+                        <constraint firstItem="uCC-j1-lH5" firstAttribute="top" secondItem="gnB-dK-HPG" secondAttribute="bottom" constant="17" id="kYT-Jo-OUs"/>
+                        <constraint firstItem="7Un-qO-yhR" firstAttribute="centerX" secondItem="EDf-bK-x6Y" secondAttribute="centerX" id="lU7-YA-3Mf"/>
+                        <constraint firstItem="gnB-dK-HPG" firstAttribute="top" secondItem="7Un-qO-yhR" secondAttribute="bottom" constant="3" id="yJS-DI-yLU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EDf-bK-x6Y" firstAttribute="leading" secondItem="tcX-jT-eoT" secondAttribute="leading" id="fev-ZG-8hF"/>
+                <constraint firstItem="EDf-bK-x6Y" firstAttribute="top" secondItem="tcX-jT-eoT" secondAttribute="top" id="iMW-eh-HAI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomButton" destination="uCC-j1-lH5" id="c4f-Oz-f9H"/>
+                <outlet property="contentView" destination="EDf-bK-x6Y" id="Xg6-Y8-hGL"/>
+            </connections>
+            <point key="canvasLocation" x="-127" y="345"/>
+        </view>
+    </objects>
+</document>
