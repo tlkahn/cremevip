@@ -51,6 +51,40 @@
             </objects>
             <point key="canvasLocation" x="1130" y="296"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="IGt-bC-4Y9">
+            <objects>
+                <viewController storyboardIdentifier="paymentVC" id="PfX-li-zea" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qjc-3G-Vdm"/>
+                        <viewControllerLayoutGuide type="bottom" id="z3z-fT-IQB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="03z-Cu-M7L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k4-cK-9LK">
+                                <rect key="frame" x="189" y="219" width="223" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="hgX-2E-0os"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4k4-cK-9LK" firstAttribute="centerX" secondItem="03z-Cu-M7L" secondAttribute="centerX" id="1so-RN-ZKu"/>
+                            <constraint firstItem="4k4-cK-9LK" firstAttribute="centerY" secondItem="03z-Cu-M7L" secondAttribute="centerY" id="w87-pT-kRs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZSB-Qc-G4c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vb9-IE-kAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="1199"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="onn-E2-78r">
             <objects>
@@ -68,6 +102,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLb-Et-Chs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="318" y="296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hoj-Gw-kaa">
+            <objects>
+                <navigationController storyboardIdentifier="paymentNavVC" automaticallyAdjustsScrollViewInsets="NO" id="fsG-6Z-nIB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sQc-F1-q3G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PfX-li-zea" kind="relationship" relationship="rootViewController" id="uEb-4a-kPf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Hh-0P-0sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318" y="1199"/>
         </scene>
     </scenes>
 </document>

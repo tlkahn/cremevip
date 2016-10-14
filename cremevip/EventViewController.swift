@@ -9,6 +9,7 @@
 import VideoSplashKit
 import UIKit
 import WebKit
+import MZFormSheetPresentationController
 
 class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate {
     
@@ -19,6 +20,8 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     var page: Double = 0
     
     var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem()
+    
+    var formSheetController: MZFormSheetPresentationViewController = MZFormSheetPresentationViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +103,24 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     
     func pay(sender: AnyObject) {
         print("pay")
+        let modal = sender as! PathDynamicModal
+        modal.closeWithLeansRandom()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = storyboard.instantiateViewControllerWithIdentifier("paymentNavVC") as! UINavigationController
+        let presentedViewController = navigationController.viewControllers.first
+        presentedViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(self.closeModal))
+        formSheetController = MZFormSheetPresentationViewController(contentViewController: navigationController)
+        let width = view.frame.width * 0.8
+        let height = view.frame.height * 0.8
+        formSheetController.presentationController?.contentViewSize = CGSize(width: width, height: height)
+        formSheetController.presentationController?.shouldApplyBackgroundBlurEffect = true
+        formSheetController.interactivePanGestureDismissalDirection = .All
+        self.presentViewController(formSheetController, animated: true, completion: nil)
+        
+    }
+    
+    func closeModal() {
+        formSheetController.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
