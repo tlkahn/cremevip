@@ -25,6 +25,8 @@
 		B8D79CD91DB07DD6006AC421 /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CD81DB07DD6006AC421 /* ModalView.xib */; };
 		B8D79CDB1DB07DDF006AC421 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D79CDA1DB07DDF006AC421 /* ModalView.swift */; };
 		B8D79CDD1DB0B387006AC421 /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CDC1DB0B387006AC421 /* storehouse.plist */; };
+		B8D79CDF1DB16132006AC421 /* PaymentSuccessModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D79CDE1DB16132006AC421 /* PaymentSuccessModalView.swift */; };
+		B8D79CE11DB16196006AC421 /* PaymentSuccessModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CE01DB16196006AC421 /* PaymentSuccessModalView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		B8D79CD81DB07DD6006AC421 /* ModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
 		B8D79CDA1DB07DDF006AC421 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		B8D79CDC1DB0B387006AC421 /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
+		B8D79CDE1DB16132006AC421 /* PaymentSuccessModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSuccessModalView.swift; sourceTree = "<group>"; };
+		B8D79CE01DB16196006AC421 /* PaymentSuccessModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentSuccessModalView.xib; sourceTree = "<group>"; };
 		CE286234BA408E105E0F9B7C /* Pods-cremevip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cremevip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cremevip/Pods-cremevip.debug.xcconfig"; sourceTree = "<group>"; };
 		FFF1DB04863D13978295E2AD /* Pods_cremevip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cremevip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +102,8 @@
 				B81C04CC1DAF5840002BE077 /* Main.storyboard */,
 				B8D79CD81DB07DD6006AC421 /* ModalView.xib */,
 				B8D79CDA1DB07DDF006AC421 /* ModalView.swift */,
+				B8D79CDE1DB16132006AC421 /* PaymentSuccessModalView.swift */,
+				B8D79CE01DB16196006AC421 /* PaymentSuccessModalView.xib */,
 				B81C04BD1DAF3A49002BE077 /* Assets.xcassets */,
 				B81C04BF1DAF3A49002BE077 /* LaunchScreen.storyboard */,
 				B81C04C21DAF3A49002BE077 /* Info.plist */,
@@ -201,6 +207,7 @@
 				B81C04C91DAF43FA002BE077 /* video.mp4 in Resources */,
 				B81C04CD1DAF5840002BE077 /* Main.storyboard in Resources */,
 				B81C04D31DAF5887002BE077 /* ImageUICollectionViewCell.xib in Resources */,
+				B8D79CE11DB16196006AC421 /* PaymentSuccessModalView.xib in Resources */,
 				B8D79CD91DB07DD6006AC421 /* ModalView.xib in Resources */,
 				B8D79CCD1DB027CE006AC421 /* term.txt in Resources */,
 			);
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D79CDF1DB16132006AC421 /* PaymentSuccessModalView.swift in Sources */,
 				B8D79CD71DB07D34006AC421 /* PathDynamicModal.swift in Sources */,
 				B81C04D51DAF588C002BE077 /* Model.swift in Sources */,
 				B81C04CF1DAF5875002BE077 /* ViewController.swift in Sources */,

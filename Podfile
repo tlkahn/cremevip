@@ -14,5 +14,6 @@ target 'cremevip' do
   pod 'CBStoreHouseRefreshControl'
   pod 'MZFormSheetPresentationController'
   pod 'Braintree'
+  pod 'SVProgressHUD'
 
 end

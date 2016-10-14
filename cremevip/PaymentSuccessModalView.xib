@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PaymentSuccessModalView" customModule="cremevip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payment Successful" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOv-5u-jqZ">
+                    <rect key="frame" x="194" y="45" width="212" height="91"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congrats! You're now in the partyyyy!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nod-PT-Xes">
+                    <rect key="frame" x="93" y="177" width="415" height="209"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-Ko-5pl">
+                    <rect key="frame" x="0.0" y="410" width="600" height="60"/>
+                    <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="F4M-VL-w4i"/>
+                    </constraints>
+                    <state key="normal" title="Add to passbook">
+                        <color key="titleColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addToPassbook:" destination="iN0-l3-epB" eventType="touchUpInside" id="WYp-OE-l8l"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6W-jf-8mz">
+                    <rect key="frame" x="-0.5" y="490" width="600" height="60"/>
+                    <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Add to Calendar">
+                        <color key="titleColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addToCalendar:" destination="iN0-l3-epB" eventType="touchUpInside" id="CJp-Th-pbM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="bOg-Ko-5pl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Zo-fs-YsA"/>
+                <constraint firstItem="G6W-jf-8mz" firstAttribute="top" secondItem="bOg-Ko-5pl" secondAttribute="bottom" constant="20" id="92L-1k-dHq"/>
+                <constraint firstItem="G6W-jf-8mz" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Kc6-Wg-NTQ"/>
+                <constraint firstItem="G6W-jf-8mz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lkf-fZ-nS8"/>
+                <constraint firstItem="bOg-Ko-5pl" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="fw9-he-IUY"/>
+                <constraint firstAttribute="bottom" secondItem="G6W-jf-8mz" secondAttribute="bottom" constant="50" id="hKt-Ub-AJ3"/>
+                <constraint firstItem="bOg-Ko-5pl" firstAttribute="height" secondItem="G6W-jf-8mz" secondAttribute="height" id="lHt-XV-8NQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="508" y="404"/>
+        </view>
+    </objects>
+</document>

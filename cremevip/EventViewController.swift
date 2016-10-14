@@ -10,8 +10,10 @@ import VideoSplashKit
 import UIKit
 import WebKit
 import MZFormSheetPresentationController
+import Braintree
+import SVProgressHUD
 
-class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate {
+class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate, BTDropInViewControllerDelegate {
     
     var scrollView: UIScrollView!
     
@@ -22,6 +24,10 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem()
     
     var formSheetController: MZFormSheetPresentationViewController = MZFormSheetPresentationViewController()
+    
+    var braintreeClient: BTAPIClient?
+    
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,20 +113,92 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
         modal.closeWithLeansRandom()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = storyboard.instantiateViewControllerWithIdentifier("paymentNavVC") as! UINavigationController
-        let presentedViewController = navigationController.viewControllers.first
-        presentedViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(self.closeModal))
         formSheetController = MZFormSheetPresentationViewController(contentViewController: navigationController)
         let width = view.frame.width * 0.8
         let height = view.frame.height * 0.8
         formSheetController.presentationController?.contentViewSize = CGSize(width: width, height: height)
         formSheetController.presentationController?.shouldApplyBackgroundBlurEffect = true
         formSheetController.interactivePanGestureDismissalDirection = .All
+        
+//        let clientTokenURL = NSURL(string: "https://braintree-sample-merchant.herokuapp.com/client_token")!
+//        let clientTokenRequest = NSMutableURLRequest(URL: clientTokenURL)
+//        clientTokenRequest.setValue("text/plain", forHTTPHeaderField: "Accept")
+//        
+//        NSURLSession.sharedSession().dataTaskWithRequest(clientTokenRequest) { (data, response, error) -> Void in
+//            // TODO: Handle errors
+//            let clientToken = String(data: data!, encoding: NSUTF8StringEncoding)
+//            
+//            self.braintreeClient = BTAPIClient(authorization: clientToken!)
+//            // As an example, you may wish to present our Drop-in UI at this point.
+//            // Continue to the next section to learn more...
+//            }.resume()
+        
+        let clientToken = "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI5ZGZkMjkyYmRlNWVkY2I1ZmI5ZTNjNjFmNjg0ODdlMTg1MzIyYWJlODExOWM1OTNhNTEzNTE5YWJiZTkzYzY4fGNyZWF0ZWRfYXQ9MjAxNi0xMC0xNFQxODoxNDozMi4yODQwNjYzMzMrMDAwMFx1MDAyNm1lcmNoYW50X2lkPTM0OHBrOWNnZjNiZ3l3MmJcdTAwMjZwdWJsaWNfa2V5PTJuMjQ3ZHY4OWJxOXZtcHIiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvMzQ4cGs5Y2dmM2JneXcyYi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzLzM0OHBrOWNnZjNiZ3l3MmIvY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vY2xpZW50LWFuYWx5dGljcy5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tLzM0OHBrOWNnZjNiZ3l3MmIifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwicGF5cGFsRW5hYmxlZCI6dHJ1ZSwicGF5cGFsIjp7ImRpc3BsYXlOYW1lIjoiQWNtZSBXaWRnZXRzLCBMdGQuIChTYW5kYm94KSIsImNsaWVudElkIjpudWxsLCJwcml2YWN5VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3BwIiwidXNlckFncmVlbWVudFVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS90b3MiLCJiYXNlVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhc3NldHNVcmwiOiJodHRwczovL2NoZWNrb3V0LnBheXBhbC5jb20iLCJkaXJlY3RCYXNlVXJsIjpudWxsLCJhbGxvd0h0dHAiOnRydWUsImVudmlyb25tZW50Tm9OZXR3b3JrIjp0cnVlLCJlbnZpcm9ubWVudCI6Im9mZmxpbmUiLCJ1bnZldHRlZE1lcmNoYW50IjpmYWxzZSwiYnJhaW50cmVlQ2xpZW50SWQiOiJtYXN0ZXJjbGllbnQzIiwiYmlsbGluZ0FncmVlbWVudHNFbmFibGVkIjp0cnVlLCJtZXJjaGFudEFjY291bnRJZCI6ImFjbWV3aWRnZXRzbHRkc2FuZGJveCIsImN1cnJlbmN5SXNvQ29kZSI6IlVTRCJ9LCJjb2luYmFzZUVuYWJsZWQiOmZhbHNlLCJtZXJjaGFudElkIjoiMzQ4cGs5Y2dmM2JneXcyYiIsInZlbm1vIjoib2ZmIn0="
+        
+        // If you haven't already, create and retain a `BTAPIClient` instance with a
+        // tokenization key OR a client token from your server.
+        // Typically, you only need to do this once per session.
+         braintreeClient = BTAPIClient(authorization: clientToken)
+        
+        // Create a BTDropInViewController
+        let dropInViewController = BTDropInViewController(APIClient: braintreeClient!)
+        dropInViewController.delegate = self
+        
+        // This is where you might want to customize your view controller (see below)
+        
+        // The way you present your BTDropInViewController instance is up to you.
+        // In this example, we wrap it in a new, modally-presented navigation controller:
+        dropInViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonSystemItem.Cancel,
+            target: self, action: #selector(self.userCancelPayment))
+        
+        navigationController.viewControllers = [dropInViewController]
+        
+        let presentedViewController = navigationController.viewControllers.first
+        presentedViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(self.closeModal))
+        
         self.presentViewController(formSheetController, animated: true, completion: nil)
         
     }
     
     func closeModal() {
         formSheetController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func userCancelPayment() {
+        print("user cancelled payment")
+        formSheetController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func dropInViewController(viewController: BTDropInViewController,
+                              didSucceedWithTokenization paymentMethodNonce: BTPaymentMethodNonce)
+    {
+        // Send payment method nonce to your server for processing
+        print("should postNonceToServer(paymentMethodNonce.nonce)")
+        // postNonceToServer(paymentMethodNonce.nonce)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        let modalView = PaymentSuccessModalView.instantiateFromNib()
+        let window = UIApplication.sharedApplication().delegate?.window!
+        let modal = PathDynamicModal()
+        modal.showMagnitude = 500.0
+        modal.closeMagnitude = 500.0
+        modalView.dismissView = { [weak modal] in
+            modal!.closeWithLeansRandom()
+        }
+//        modalView.bottomButtonHandler = {[weak modal] in
+//            self.pay(modal!)
+//            return
+//        }
+        modal.show(modalView: modalView, inView: window!)
+
+        
+    
+    }
+    
+    func dropInViewControllerDidCancel(viewController: BTDropInViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
