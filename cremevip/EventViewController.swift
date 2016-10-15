@@ -33,6 +33,12 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     
     var currentVideoUrl: String? = ""
     
+    var indicator: UIActivityIndicatorView!
+    
+    var view1: UIView!
+    
+    var view2: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVideoUrl?.appendContentsOf("video")
@@ -49,10 +55,10 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
         scrollView.bounces = false
         scrollView.delegate = self
         scrollView.showsVerticalScrollIndicator = false
-        let view1 = UIView.init(frame: CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: self.view.frame.height))
+        view1 = UIView.init(frame: CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: self.view.frame.height))
         
         let webConfiguration = WKWebViewConfiguration()
-        let view2 = WKWebView(frame: CGRect(x: 0, y: view1.frame.origin.y + view1.frame.height, width: scrollView.contentSize.width, height: view1.frame.height), configuration: webConfiguration)
+        view2 = WKWebView(frame: CGRect(x: 0, y: view1.frame.origin.y + view1.frame.height, width: scrollView.contentSize.width, height: view1.frame.height), configuration: webConfiguration)
         view2.UIDelegate = self
         view2.navigationDelegate = self
         let myURL = NSURL(string: "https://cremevip.wordpress.com/2016/10/15/party-real-hard-at-rubyskye/")
@@ -93,6 +99,14 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
         scrollView.addSubview(view1)
         scrollView.addSubview(view2)
         view.addSubview(scrollView)
+        indicator = UIActivityIndicatorView (activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        indicator.frame = CGRectMake(100.0, 100.0, 30.0, 30.0)
+        indicator.center = view1.center
+        view1.addSubview(indicator)
+        indicator.bringSubviewToFront(view1)
+        indicator.startAnimating()
+        
+        
     }
     
     func book(_: AnyObject) {
@@ -210,6 +224,12 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func movieReadyToPlay() {
+        print("movie ready")
+        self.indicator.stopAnimating()
+        self.indicator.hidesWhenStopped = true
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
