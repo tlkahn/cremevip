@@ -23,7 +23,7 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     
     var page: Double = 0
     
-    var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem()
+    var rightBarButtonItem: UIBarButtonItem?
     
     var formSheetController: MZFormSheetPresentationViewController = MZFormSheetPresentationViewController()
     
@@ -248,10 +248,12 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
         if page > 0.3 {
             self.moviePlayer.player?.pause()
             self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+            self.navigationItem.hidesBackButton = true
         }
         else {
             self.moviePlayer.player?.play()
             self.navigationItem.rightBarButtonItem = nil;
+            self.navigationItem.hidesBackButton = false
         }
         
     }

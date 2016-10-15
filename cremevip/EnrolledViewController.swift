@@ -32,15 +32,15 @@ class EnrolledViewController: UIViewController,CardCollectionViewDataSource {
     
     func generateCardInfo (cardCount:Int) -> [AnyObject] {
         var arr = [AnyObject]()
-        let xibName = ["CardA","CardB","CardC"]
+//        let xibName = ["CardA","CardB","CardC"]
         
-        for _ in 1...cardCount {
-            let value = Int(arc4random_uniform(3))
-            arr.append(xibName[value] as AnyObject)
-        }
-//        arr.append("CardA" as AnyObject)
-//        arr.append("CardB" as AnyObject)
-//        arr.append("CardC" as AnyObject)
+//        for _ in 1...cardCount {
+//            let value = Int(arc4random_uniform(3))
+//            arr.append(xibName[value] as AnyObject)
+//        }
+        arr.append("CardA" as AnyObject)
+        arr.append("CardB" as AnyObject)
+        arr.append("CardC" as AnyObject)
 
         return arr
     }
