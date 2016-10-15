@@ -71,7 +71,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         layout.headerHeight = 10.0
         
         // Collection view attributes
-        self.collectionView.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
+//        self.collectionView.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
         self.collectionView.alwaysBounceVertical = true
         
         // Add the waterfall layout to your collection view

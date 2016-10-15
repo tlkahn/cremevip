@@ -21,7 +21,11 @@ extension UIButton {
     
     var substituteFontName : String {
         get { return self.titleLabel!.font.fontName}
-        set { self.titleLabel!.font = UIFont(name: newValue, size: self.titleLabel!.font.pointSize)! }
+        set {
+            if (self.titleLabel != nil) {
+                self.titleLabel!.font = UIFont(name: newValue, size: self.titleLabel!.font.pointSize)! }
+            }
+            
     }
     
 }

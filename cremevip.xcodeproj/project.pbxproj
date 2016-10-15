@@ -25,6 +25,14 @@
 		B89EB1751DB1E33900E4981D /* SnapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1741DB1E33900E4981D /* SnapContainerViewController.swift */; };
 		B89EB1771DB1E34900E4981D /* VerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1761DB1E34900E4981D /* VerticalScrollViewController.swift */; };
 		B89EB17D1DB1ED6500E4981D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB17C1DB1ED6500E4981D /* SearchViewController.swift */; };
+		B89EB17F1DB1F44B00E4981D /* EnrolledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB17E1DB1F44B00E4981D /* EnrolledViewController.swift */; };
+		B89EB1811DB1F46600E4981D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1801DB1F46600E4981D /* SecondViewController.swift */; };
+		B89EB1891DB1F48100E4981D /* CardACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1831DB1F48100E4981D /* CardACell.swift */; };
+		B89EB18A1DB1F48100E4981D /* CardACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89EB1841DB1F48100E4981D /* CardACell.xib */; };
+		B89EB18B1DB1F48100E4981D /* CardBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1851DB1F48100E4981D /* CardBCell.swift */; };
+		B89EB18C1DB1F48100E4981D /* CardBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89EB1861DB1F48100E4981D /* CardBCell.xib */; };
+		B89EB18D1DB1F48100E4981D /* CardCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1871DB1F48100E4981D /* CardCCell.swift */; };
+		B89EB18E1DB1F48100E4981D /* CardCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89EB1881DB1F48100E4981D /* CardCCell.xib */; };
 		B8D79CCB1DB0081C006AC421 /* din-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CCA1DB0081C006AC421 /* din-regular.ttf */; };
 		B8D79CCD1DB027CE006AC421 /* term.txt in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CCC1DB027CE006AC421 /* term.txt */; };
 		B8D79CCF1DB029C4006AC421 /* EventViewControllerYT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D79CCE1DB029C4006AC421 /* EventViewControllerYT.swift */; };
@@ -57,6 +65,14 @@
 		B89EB1741DB1E33900E4981D /* SnapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapContainerViewController.swift; sourceTree = "<group>"; };
 		B89EB1761DB1E34900E4981D /* VerticalScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalScrollViewController.swift; sourceTree = "<group>"; };
 		B89EB17C1DB1ED6500E4981D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B89EB17E1DB1F44B00E4981D /* EnrolledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrolledViewController.swift; sourceTree = "<group>"; };
+		B89EB1801DB1F46600E4981D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B89EB1831DB1F48100E4981D /* CardACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardACell.swift; sourceTree = "<group>"; };
+		B89EB1841DB1F48100E4981D /* CardACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardACell.xib; sourceTree = "<group>"; };
+		B89EB1851DB1F48100E4981D /* CardBCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBCell.swift; sourceTree = "<group>"; };
+		B89EB1861DB1F48100E4981D /* CardBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardBCell.xib; sourceTree = "<group>"; };
+		B89EB1871DB1F48100E4981D /* CardCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCCell.swift; sourceTree = "<group>"; };
+		B89EB1881DB1F48100E4981D /* CardCCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCCell.xib; sourceTree = "<group>"; };
 		B8D79CCA1DB0081C006AC421 /* din-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-regular.ttf"; sourceTree = "<group>"; };
 		B8D79CCC1DB027CE006AC421 /* term.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = term.txt; sourceTree = "<group>"; };
 		B8D79CCE1DB029C4006AC421 /* EventViewControllerYT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerYT.swift; sourceTree = "<group>"; };
@@ -87,6 +103,7 @@
 			children = (
 				B8D79CCC1DB027CE006AC421 /* term.txt */,
 				B8D79CDC1DB0B387006AC421 /* storehouse.plist */,
+				B89EB1821DB1F48100E4981D /* CardInfoView */,
 				B8D79CD51DB07D34006AC421 /* PathDynamicModal */,
 				B81C04B51DAF3A49002BE077 /* cremevip */,
 				B81C04B41DAF3A49002BE077 /* Products */,
@@ -109,6 +126,8 @@
 				B81C04B61DAF3A49002BE077 /* AppDelegate.swift */,
 				B81C04CA1DAF5819002BE077 /* EventViewController.swift */,
 				B8D79CCE1DB029C4006AC421 /* EventViewControllerYT.swift */,
+				B89EB17E1DB1F44B00E4981D /* EnrolledViewController.swift */,
+				B89EB1801DB1F46600E4981D /* SecondViewController.swift */,
 				B89EB17C1DB1ED6500E4981D /* SearchViewController.swift */,
 				B81C04CE1DAF5875002BE077 /* ViewController.swift */,
 				B89EB1741DB1E33900E4981D /* SnapContainerViewController.swift */,
@@ -132,6 +151,20 @@
 				B89EB16E1DB1B96B00E4981D /* video5.mp4 */,
 			);
 			path = cremevip;
+			sourceTree = "<group>";
+		};
+		B89EB1821DB1F48100E4981D /* CardInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				B89EB1831DB1F48100E4981D /* CardACell.swift */,
+				B89EB1841DB1F48100E4981D /* CardACell.xib */,
+				B89EB1851DB1F48100E4981D /* CardBCell.swift */,
+				B89EB1861DB1F48100E4981D /* CardBCell.xib */,
+				B89EB1871DB1F48100E4981D /* CardCCell.swift */,
+				B89EB1881DB1F48100E4981D /* CardCCell.xib */,
+			);
+			name = CardInfoView;
+			path = PathDynamicModal/CardInfoView;
 			sourceTree = "<group>";
 		};
 		B8D79CD51DB07D34006AC421 /* PathDynamicModal */ = {
@@ -227,9 +260,12 @@
 				B89EB16B1DB1B69500E4981D /* video1.mp4 in Resources */,
 				B89EB1731DB1BAD600E4981D /* Assets.xcassets in Resources */,
 				B89EB1671DB1B2D000E4981D /* video2.mp4 in Resources */,
+				B89EB18E1DB1F48100E4981D /* CardCCell.xib in Resources */,
 				B81C04CD1DAF5840002BE077 /* Main.storyboard in Resources */,
 				B89EB1691DB1B3B300E4981D /* video3.mp4 in Resources */,
 				B81C04D31DAF5887002BE077 /* ImageUICollectionViewCell.xib in Resources */,
+				B89EB18A1DB1F48100E4981D /* CardACell.xib in Resources */,
+				B89EB18C1DB1F48100E4981D /* CardBCell.xib in Resources */,
 				B8D79CE11DB16196006AC421 /* PaymentSuccessModalView.xib in Resources */,
 				B8D79CD91DB07DD6006AC421 /* ModalView.xib in Resources */,
 				B89EB16F1DB1B96B00E4981D /* video5.mp4 in Resources */,
@@ -295,15 +331,20 @@
 			files = (
 				B8D79CDF1DB16132006AC421 /* PaymentSuccessModalView.swift in Sources */,
 				B8D79CD71DB07D34006AC421 /* PathDynamicModal.swift in Sources */,
+				B89EB17F1DB1F44B00E4981D /* EnrolledViewController.swift in Sources */,
 				B89EB1751DB1E33900E4981D /* SnapContainerViewController.swift in Sources */,
+				B89EB1811DB1F46600E4981D /* SecondViewController.swift in Sources */,
 				B81C04D51DAF588C002BE077 /* Model.swift in Sources */,
+				B89EB18B1DB1F48100E4981D /* CardBCell.swift in Sources */,
 				B81C04CF1DAF5875002BE077 /* ViewController.swift in Sources */,
 				B8D79CCF1DB029C4006AC421 /* EventViewControllerYT.swift in Sources */,
+				B89EB18D1DB1F48100E4981D /* CardCCell.swift in Sources */,
 				B89EB17D1DB1ED6500E4981D /* SearchViewController.swift in Sources */,
 				B81C04B71DAF3A49002BE077 /* AppDelegate.swift in Sources */,
 				B89EB1771DB1E34900E4981D /* VerticalScrollViewController.swift in Sources */,
 				B8D79CDB1DB07DDF006AC421 /* ModalView.swift in Sources */,
 				B81C04D11DAF587B002BE077 /* ImageUICollectionViewCell.swift in Sources */,
+				B89EB1891DB1F48100E4981D /* CardACell.swift in Sources */,
 				B81C04CB1DAF5819002BE077 /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

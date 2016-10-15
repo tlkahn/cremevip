@@ -15,5 +15,6 @@ target 'cremevip' do
   pod 'MZFormSheetPresentationController'
   pod 'Braintree'
   pod 'SVProgressHUD'
+  pod 'MMCardView',:git => 'https://github.com/MillmanY/MMCardView', :branch => ‘Swift2’
 
 end

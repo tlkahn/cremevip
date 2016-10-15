@@ -87,7 +87,7 @@ class SnapContainerViewController: UIViewController, UIScrollViewDelegate {
                                                height: view.height
         )
         
-        rightVc.view.frame = CGRect(x: 2 * view.width,
+        rightVc.view.frame = CGRect(x: 2 * view.width + 8,
                                     y: 0,
                                     width: view.width,
                                     height: view.height
