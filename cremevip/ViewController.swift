@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func refreshTriggered(sender aSender: AnyObject) -> Void {
         print("refreshTriggered")
-        self.performSelector(#selector(self.finishRefreshControl), withObject: nil, afterDelay: 3, inModes: [NSRunLoopCommonModes])
+        self.performSelector(#selector(self.finishRefreshControl), withObject: nil, afterDelay: 2, inModes: [NSRunLoopCommonModes])
     }
     
     func finishRefreshControl() {
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Change individual layout attributes for the spacing between cells
         layout.minimumColumnSpacing = 1.0
         layout.minimumInteritemSpacing = 1.0
-        layout.headerHeight = 0
+        layout.headerHeight = 10.0
         
         // Collection view attributes
         self.collectionView.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
@@ -87,14 +87,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var eventVc: UIViewController
-        if indexPath.row % 2 == 0 {
+        var eventVc: EventViewController
+        if indexPath.row == 0 {
             eventVc = EventViewControllerYT()
         }
         else {
             eventVc = EventViewController()
         }
-        
+        eventVc.collectionIndex = indexPath.row % 5 + 1
         self.navigationController?.pushViewController(eventVc, animated: true)
     }
     

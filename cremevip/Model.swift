@@ -26,6 +26,8 @@ class Model: NSObject {
         let image8 = UIImage(named: "image8")
         let image9 = UIImage(named: "image9")
         let image10 = UIImage(named: "image10")
+        let image11 = UIImage(named: "image11")
+        let image12 = UIImage(named: "image12")
         
         images.append(image1!)
         images.append(image2!)
@@ -37,6 +39,9 @@ class Model: NSObject {
         images.append(image8!)
         images.append(image9!)
         images.append(image10!)
+        images.append(image11!)
+        images.append(image12!)
+
         
   
     }

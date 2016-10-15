@@ -10,17 +10,10 @@ import YouTubePlayer
 import UIKit
 import WebKit
 
-class EventViewControllerYT: UIViewController, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate, YouTubePlayerDelegate {
-    
-    var scrollView: UIScrollView!
-    
-    var contentOffset: CGPoint = CGPoint()
-    
-    var page: Double = 0
+class EventViewControllerYT: EventViewController, YouTubePlayerDelegate {
+
     
     var videoPlayer: YouTubePlayerView!
-    
-    var rightBarButtonItem: UIBarButtonItem = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,40 +73,6 @@ class EventViewControllerYT: UIViewController, UIScrollViewDelegate, WKUIDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        print("scrollViewWillBeginDragging")
-        
-    }
-    
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
-        print("scrollViewWillBeginDecelerating")
-    }
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let height = scrollView.frame.size.height;
-        page = Double(scrollView.contentOffset.y / height)
-        print("scrollViewDidScroll to ", page)
-        if page > 0.3 {
-            self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-        }
-        else {
-            self.navigationItem.rightBarButtonItem = nil;
-        }
-    }
-    
-    func book(_: AnyObject) {
-        print("book now")
-    }
-    
-    func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-    }
-    
-    
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
     func playerReady(videoPlayer: YouTubePlayerView) {

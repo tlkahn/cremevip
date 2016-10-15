@@ -8,6 +8,24 @@
 
 import UIKit
 
+extension UILabel {
+    
+    var substituteFontName : String {
+        get { return self.font.fontName }
+        set { self.font = UIFont(name: newValue, size: self.font.pointSize) }
+    }
+    
+}
+
+extension UIButton {
+    
+    var substituteFontName : String {
+        get { return self.titleLabel!.font.fontName}
+        set { self.titleLabel!.font = UIFont(name: newValue, size: self.titleLabel!.font.pointSize)! }
+    }
+    
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        application.statusBarHidden = true
+        UILabel.appearance().substituteFontName = "din-regular"
+        UIButton.appearance().substituteFontName = "din-regular"
         return true
     }
 

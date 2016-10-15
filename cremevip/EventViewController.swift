@@ -17,6 +17,8 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     
     var scrollView: UIScrollView!
     
+    var collectionIndex: Int?
+    
     var contentOffset: CGPoint = CGPoint()
     
     var page: Double = 0
@@ -29,8 +31,12 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
     
     var alertController: UIAlertController?
     
+    var currentVideoUrl: String? = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.currentVideoUrl?.appendContentsOf("video")
+        self.currentVideoUrl?.appendContentsOf(String(collectionIndex!))
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -49,11 +55,11 @@ class EventViewController: VideoSplashViewController, UIScrollViewDelegate, WKUI
         let view2 = WKWebView(frame: CGRect(x: 0, y: view1.frame.origin.y + view1.frame.height, width: scrollView.contentSize.width, height: view1.frame.height), configuration: webConfiguration)
         view2.UIDelegate = self
         view2.navigationDelegate = self
-        let myURL = NSURL(string: "http://localhost:8888/2016/10/14/5/")
+        let myURL = NSURL(string: "https://cremevip.wordpress.com/2016/10/15/party-real-hard-at-rubyskye/")
         let myRequest = NSURLRequest(URL: myURL!)
         view2.loadRequest(myRequest)
         
-        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("video", ofType: "mp4")!)
+        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource(currentVideoUrl, ofType: "mp4")!)
         self.videoFrame = view1.frame
         self.fillMode = .ResizeAspectFill
         self.alwaysRepeat = true
