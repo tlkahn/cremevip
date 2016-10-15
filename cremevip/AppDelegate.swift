@@ -37,6 +37,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarHidden = true
         UILabel.appearance().substituteFontName = "din-regular"
         UIButton.appearance().substituteFontName = "din-regular"
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let left = storyboard.instantiateViewControllerWithIdentifier("searchVc")
+        let middle = storyboard.instantiateViewControllerWithIdentifier("mainNavVc") as! UINavigationController
+        let right = storyboard.instantiateViewControllerWithIdentifier("enrolledVc")
+        
+        let snapContainer = SnapContainerViewController.containerViewWith(left,
+                                                                          middleVC: middle,
+                                                                          rightVC: right)
+        self.window?.rootViewController = snapContainer
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

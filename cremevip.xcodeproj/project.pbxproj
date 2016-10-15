@@ -22,6 +22,9 @@
 		B89EB16D1DB1B94A00E4981D /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B89EB16C1DB1B94A00E4981D /* video4.mp4 */; };
 		B89EB16F1DB1B96B00E4981D /* video5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B89EB16E1DB1B96B00E4981D /* video5.mp4 */; };
 		B89EB1731DB1BAD600E4981D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89EB1721DB1BAD600E4981D /* Assets.xcassets */; };
+		B89EB1751DB1E33900E4981D /* SnapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1741DB1E33900E4981D /* SnapContainerViewController.swift */; };
+		B89EB1771DB1E34900E4981D /* VerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB1761DB1E34900E4981D /* VerticalScrollViewController.swift */; };
+		B89EB17D1DB1ED6500E4981D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89EB17C1DB1ED6500E4981D /* SearchViewController.swift */; };
 		B8D79CCB1DB0081C006AC421 /* din-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CCA1DB0081C006AC421 /* din-regular.ttf */; };
 		B8D79CCD1DB027CE006AC421 /* term.txt in Resources */ = {isa = PBXBuildFile; fileRef = B8D79CCC1DB027CE006AC421 /* term.txt */; };
 		B8D79CCF1DB029C4006AC421 /* EventViewControllerYT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D79CCE1DB029C4006AC421 /* EventViewControllerYT.swift */; };
@@ -51,6 +54,9 @@
 		B89EB16C1DB1B94A00E4981D /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video4.mp4; sourceTree = "<group>"; };
 		B89EB16E1DB1B96B00E4981D /* video5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video5.mp4; sourceTree = "<group>"; };
 		B89EB1721DB1BAD600E4981D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B89EB1741DB1E33900E4981D /* SnapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapContainerViewController.swift; sourceTree = "<group>"; };
+		B89EB1761DB1E34900E4981D /* VerticalScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalScrollViewController.swift; sourceTree = "<group>"; };
+		B89EB17C1DB1ED6500E4981D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B8D79CCA1DB0081C006AC421 /* din-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din-regular.ttf"; sourceTree = "<group>"; };
 		B8D79CCC1DB027CE006AC421 /* term.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = term.txt; sourceTree = "<group>"; };
 		B8D79CCE1DB029C4006AC421 /* EventViewControllerYT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewControllerYT.swift; sourceTree = "<group>"; };
@@ -103,7 +109,10 @@
 				B81C04B61DAF3A49002BE077 /* AppDelegate.swift */,
 				B81C04CA1DAF5819002BE077 /* EventViewController.swift */,
 				B8D79CCE1DB029C4006AC421 /* EventViewControllerYT.swift */,
+				B89EB17C1DB1ED6500E4981D /* SearchViewController.swift */,
 				B81C04CE1DAF5875002BE077 /* ViewController.swift */,
+				B89EB1741DB1E33900E4981D /* SnapContainerViewController.swift */,
+				B89EB1761DB1E34900E4981D /* VerticalScrollViewController.swift */,
 				B81C04D01DAF587B002BE077 /* ImageUICollectionViewCell.swift */,
 				B81C04D21DAF5887002BE077 /* ImageUICollectionViewCell.xib */,
 				B81C04D41DAF588C002BE077 /* Model.swift */,
@@ -286,10 +295,13 @@
 			files = (
 				B8D79CDF1DB16132006AC421 /* PaymentSuccessModalView.swift in Sources */,
 				B8D79CD71DB07D34006AC421 /* PathDynamicModal.swift in Sources */,
+				B89EB1751DB1E33900E4981D /* SnapContainerViewController.swift in Sources */,
 				B81C04D51DAF588C002BE077 /* Model.swift in Sources */,
 				B81C04CF1DAF5875002BE077 /* ViewController.swift in Sources */,
 				B8D79CCF1DB029C4006AC421 /* EventViewControllerYT.swift in Sources */,
+				B89EB17D1DB1ED6500E4981D /* SearchViewController.swift in Sources */,
 				B81C04B71DAF3A49002BE077 /* AppDelegate.swift in Sources */,
+				B89EB1771DB1E34900E4981D /* VerticalScrollViewController.swift in Sources */,
 				B8D79CDB1DB07DDF006AC421 /* ModalView.swift in Sources */,
 				B81C04D11DAF587B002BE077 /* ImageUICollectionViewCell.swift in Sources */,
 				B81C04CB1DAF5819002BE077 /* EventViewController.swift in Sources */,
