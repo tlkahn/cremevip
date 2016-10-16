@@ -115,6 +115,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Add image to cell
         cell.image.image = model.images[indexPath.row]
+        cell.title.text = model.titles[indexPath.row]
         return cell
     }
     

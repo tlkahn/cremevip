@@ -16,18 +16,29 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-1Q-SeU">
                         <rect key="frame" x="0.0" y="0.0" width="236" height="231"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-Rq-5pP">
+                        <rect key="frame" x="0.0" y="106.5" width="236" height="18"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstItem="OiM-Rq-5pP" firstAttribute="width" secondItem="2bW-1Q-SeU" secondAttribute="width" id="0V6-zo-sfo"/>
                 <constraint firstItem="2bW-1Q-SeU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5h1-1c-duS"/>
                 <constraint firstAttribute="bottom" secondItem="2bW-1Q-SeU" secondAttribute="bottom" id="AU5-Yo-8Eh"/>
                 <constraint firstAttribute="trailing" secondItem="2bW-1Q-SeU" secondAttribute="trailing" id="YI5-cr-fn9"/>
+                <constraint firstItem="OiM-Rq-5pP" firstAttribute="centerX" secondItem="2bW-1Q-SeU" secondAttribute="centerX" id="blR-M1-6cM"/>
                 <constraint firstItem="2bW-1Q-SeU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oYB-t9-MnZ"/>
+                <constraint firstItem="OiM-Rq-5pP" firstAttribute="centerY" secondItem="2bW-1Q-SeU" secondAttribute="centerY" id="xiX-ba-oyH"/>
             </constraints>
             <size key="customSize" width="236" height="231"/>
             <connections>
                 <outlet property="image" destination="2bW-1Q-SeU" id="IgD-4X-rDz"/>
+                <outlet property="title" destination="OiM-Rq-5pP" id="Z2s-8v-Dkb"/>
             </connections>
             <point key="canvasLocation" x="431" y="461.5"/>
         </collectionViewCell>

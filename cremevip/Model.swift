@@ -12,6 +12,8 @@ class Model: NSObject {
     
     var images : [UIImage] = []
     
+    var titles : [String] = []
+    
     
     // Assemble an array of images to use for sample content for the collectionView
     func buildDataSource(){
@@ -41,6 +43,8 @@ class Model: NSObject {
         images.append(image10!)
         images.append(image11!)
         images.append(image12!)
+        
+        titles = ["T. Maximus", "BOBO", "Zinix", "John Philip", "Dennis Chu", "Brokenien", "Barr", "Aaron Y", "XYZXY", "Poacherman", "Vegas XX", "Bayor"]
 
         
   
