@@ -33,6 +33,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         model.buildDataSource()
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         self.storeHouseRefreshControl = CBStoreHouseRefreshControl.attachToScrollView(self.collectionView, target: self, refreshAction: #selector(self.refreshTriggered(sender:)), plist: "storehouse", color: UIColor.whiteColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
         
         // Attach datasource and delegate
@@ -68,7 +70,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Change individual layout attributes for the spacing between cells
         layout.minimumColumnSpacing = 1.0
         layout.minimumInteritemSpacing = 1.0
-        layout.headerHeight = 10.0
+        layout.headerHeight = 60.0
         
         // Collection view attributes
 //        self.collectionView.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
