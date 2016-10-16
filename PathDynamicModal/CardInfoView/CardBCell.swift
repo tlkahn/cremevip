@@ -9,18 +9,28 @@
 import UIKit
 import MMCardView
 
-class CardBCell: CardCell,CardCellProtocol {
+public class CardBCell: CardCell,CardCellProtocol {
 
     @IBOutlet weak var imgV:UIImageView!
+    
+    @IBOutlet weak var title: UILabel!
+    
+    
+    @IBOutlet weak var text: UILabel!
     
     public static func cellIdentifier() -> String {
         return "CardB"
     }
 
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
-        imgV.layer.cornerRadius = 8.0
+        imgV.layer.cornerRadius = 10.0
+        imgV.layer.borderColor = UIColor.whiteColor().CGColor
+        imgV.layer.borderWidth = 3.0
+        imgV.frame.size.width = imgV.frame.size.width - 100
         imgV.clipsToBounds = true
+        text.numberOfLines = 0
+        text.sizeToFit()
         // Initialization code
     }
 

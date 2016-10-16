@@ -26,6 +26,7 @@ class EnrolledViewController: UIViewController,CardCollectionViewDataSource {
         //fix overlapping main screen to the left
         card.frame.origin.x = card.frame.origin.x + 100
         card.layoutIfNeeded()
+        card.clipsToBounds = true
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -38,28 +39,45 @@ class EnrolledViewController: UIViewController,CardCollectionViewDataSource {
 //            let value = Int(arc4random_uniform(3))
 //            arr.append(xibName[value] as AnyObject)
 //        }
-        arr.append("CardA" as AnyObject)
         arr.append("CardB" as AnyObject)
-        arr.append("CardC" as AnyObject)
+        arr.append("CardB" as AnyObject)
+        arr.append("CardB" as AnyObject)
 
         return arr
     }
     
     func cardView(collectionView:UICollectionView,item:AnyObject,indexPath:NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(item as! String, forIndexPath: indexPath)
+        var titleText = ""
+        var detailText = ""
         switch cell {
-            case let c as CardACell:
-                c.txtView.text = "Party with DJ T. Maximus at RubySkye!"
+//            case let c as CardACell:
+//                c.labTitle.text = "Party with DJ T. Maximus at RubySkye!"
+//                c.txtView.text = "Oct 28 at RubySkye."
             case let c as CardBCell:
-                let v = Int(arc4random_uniform(5))+1
-                c.imgV.image = UIImage.init(named: "image\(v)")            
-            case let c as CardCCell:
-                c.clickCallBack {
-                    
-                    if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Second") as? SecondViewController {
-                        self.card.presentViewController(to: vc)
-                    }
+                switch indexPath.row % 3 {
+                case 0:
+                    titleText = "Party with DJ T. Maximus at RubySkye!"
+                    detailText = "Oct 28 at RubySkye. Let's partyyyyyy real hard!!"
+                case 1:
+                    titleText = "Dream come true when DJ BOBO hosts a big night at LA Riot!"
+                    detailText = "Oct 29 at LA Riot. Let's partyyyyyy real hard!!"
+                case 2:
+                    titleText = "Rock Rave Rant with Roaring DJ Dennis Chu"
+                    detailText = "Oct 30 at Cellar Pub Santa Monica. Time to get high!"
+                default: break
                 }
+//                let v = Int(arc4random_uniform(5))+1
+                c.title.text = titleText
+                c.text.text = detailText
+                c.imgV.image = UIImage.init(named: "image\(indexPath.row+1)")
+//            case let c as CardCCell:
+//                c.clickCallBack {
+//                    
+//                    if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Second") as? SecondViewController {
+//                        self.card.presentViewController(to: vc)
+//                    }
+//                }
             default:
                 return UICollectionViewCell()
 
