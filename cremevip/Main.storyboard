@@ -152,6 +152,24 @@
             </objects>
             <point key="canvasLocation" x="1130" y="1199"/>
         </scene>
+        <!--CardIO View Controller-->
+        <scene sceneID="xOd-Dr-Jf7">
+            <objects>
+                <viewController storyboardIdentifier="cardIOVc" id="vqf-FV-iyD" customClass="CardIOViewController" customModule="cremevip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kY6-8P-A08"/>
+                        <viewControllerLayoutGuide type="bottom" id="D30-53-d2V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6SD-Qk-sze">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Q1-bY-oPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="2230"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="WVN-p6-JeN">
             <objects>
