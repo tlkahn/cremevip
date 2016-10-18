@@ -15,16 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     let model = Model()
     
-    var storeHouseRefreshControl: CBStoreHouseRefreshControl = CBStoreHouseRefreshControl()
-    
-    func refreshTriggered(sender aSender: AnyObject) -> Void {
-        print("refreshTriggered")
-        self.performSelector(#selector(self.finishRefreshControl), withObject: nil, afterDelay: 2, inModes: [NSRunLoopCommonModes])
-    }
-    
-    func finishRefreshControl() {
-        self.storeHouseRefreshControl.finishingLoading()
-    }
+    var refreshControl: UIRefreshControl!
  
     //MARK: - View Controller Lifecycle
     override func viewDidLoad() {
@@ -34,8 +25,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         model.buildDataSource()
         
         self.automaticallyAdjustsScrollViewInsets = false
-        
-        self.storeHouseRefreshControl = CBStoreHouseRefreshControl.attachToScrollView(self.collectionView, target: self, refreshAction: #selector(self.refreshTriggered(sender:)), plist: "storehouse", color: UIColor.whiteColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
         
         // Attach datasource and delegate
         self.collectionView.dataSource  = self
@@ -54,6 +43,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         //Register nibs
         registerNibs()
+        
+        refreshControl = UIRefreshControl()
+        
+        
+        refreshControl.bounds = CGRectMake(0, 30, refreshControl.bounds.size.width, refreshControl.bounds.size.height) // Change position of refresh view
+        refreshControl.addTarget(self, action: #selector(self.refresh), forControlEvents: .ValueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh...")
+        refreshControl.tintColor = UIColor.whiteColor()
+        collectionView.addSubview(refreshControl)
+    }
+    
+    func refresh() {
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self.refreshControl.endRefreshing()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -133,11 +138,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.storeHouseRefreshControl.scrollViewDidScroll()
+        
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        self.storeHouseRefreshControl.scrollViewDidEndDragging()
+        
     }
 }
 
