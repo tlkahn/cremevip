@@ -12,16 +12,25 @@ class CardIOViewController: UIViewController, CardIOViewDelegate {
     
     var eventVc : EventViewController!
     
+    var cardIOView : CardIOView!
+    
     override func viewWillAppear(animated: Bool) {
         CardIOUtilities.preloadCardIO()
-        view.viewWithTag(111)?.frame = CGRect(x: 0, y: (view.frame.height - 3/4 * view.frame.width) * 1/4, width: view.frame.width, height: 3/4 * view.frame.width)
+//        view.viewWithTag(111)?.frame = view.frame
+        cardIOView.frame = view.frame
     }
     
     override func viewDidLoad() {
-        let cardIOView = CardIOView(frame: view.bounds)
+        cardIOView = CardIOView(frame: view.bounds)
         cardIOView.delegate = self
         cardIOView.tag = 111
         view.addSubview(cardIOView)
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        if fromInterfaceOrientation == .Portrait ||  fromInterfaceOrientation == .Portrait {
+            cardIOView.frame.origin.y = -40
+        }
     }
     
     func cardIOView(cardIOView: CardIOView, didScanCard info: CardIOCreditCardInfo) {
