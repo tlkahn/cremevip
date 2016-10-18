@@ -47,7 +47,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         refreshControl = UIRefreshControl()
         
         
-        refreshControl.bounds = CGRectMake(0, 30, refreshControl.bounds.size.width, refreshControl.bounds.size.height) // Change position of refresh view
+        refreshControl.bounds = CGRectMake(0, 40, refreshControl.bounds.size.width, refreshControl.bounds.size.height) // Change position of refresh view
         refreshControl.addTarget(self, action: #selector(self.refresh), forControlEvents: .ValueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Pull down to refresh...")
         refreshControl.tintColor = UIColor.whiteColor()

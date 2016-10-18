@@ -1,0 +1,70 @@
+PODS:
+  - Braintree (4.7.0):
+    - Braintree/Card (= 4.7.0)
+    - Braintree/Core (= 4.7.0)
+    - Braintree/PayPal (= 4.7.0)
+    - Braintree/UI (= 4.7.0)
+  - Braintree/Card (4.7.0):
+    - Braintree/Core
+  - Braintree/Core (4.7.0)
+  - Braintree/PayPal (4.7.0):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.7.0):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.7.0):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.7.0)
+  - Braintree/UI (4.7.0):
+    - Braintree/Card
+    - Braintree/Core
+  - CBStoreHouseRefreshControl (1.0)
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.5)
+  - MMCardView (0.1.4)
+  - MZAppearance (1.1.6)
+  - MZFormSheetPresentationController (2.4.2):
+    - MZAppearance
+  - Reveal-SDK (2)
+  - SVProgressHUD (2.0.3)
+  - VideoSplashKit (1.1.0)
+  - YouTubePlayer (0.3.0)
+
+DEPENDENCIES:
+  - Braintree
+  - CBStoreHouseRefreshControl
+  - CHTCollectionViewWaterfallLayout/Swift
+  - MMCardView (from `https://github.com/MillmanY/MMCardView`, branch `Swift2`)
+  - MZFormSheetPresentationController
+  - Reveal-SDK
+  - SVProgressHUD
+  - VideoSplashKit
+  - YouTubePlayer
+
+EXTERNAL SOURCES:
+  MMCardView:
+    :branch: Swift2
+    :git: https://github.com/MillmanY/MMCardView
+
+CHECKOUT OPTIONS:
+  MMCardView:
+    :commit: 6383174a4af6c8efcdaa255bef5f5affa8cccd2c
+    :git: https://github.com/MillmanY/MMCardView
+
+SPEC CHECKSUMS:
+  Braintree: 2d53c805e93a5830a4359a757be50fc0f25392a9
+  CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
+  CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
+  MMCardView: 0eea930034d91c84cd951d8b9b19964eab071d40
+  MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
+  MZFormSheetPresentationController: c1dc3bce639d2393b3cc416fcb6e050eb5bca062
+  Reveal-SDK: 4d36a47c7091843eee525b72219e005b90bbac0b
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  VideoSplashKit: 0aa63d0bb37c5bd357de3e6a2a13dea5acad4d66
+  YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
+
+PODFILE CHECKSUM: d4864ef381d8d9a3ac37c1cf2bd1922ba62479b9
+
+COCOAPODS: 1.0.1
